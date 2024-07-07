@@ -5,7 +5,7 @@ def crash_fivem():
     for proc in psutil.process_iter(['pid', 'name']):
         if proc.info['name'] == 'FiveM.exe':
             pid = proc.info['pid']
-            print(f"[+] Found FiveM with PID {pid}")
+            print(f"[+] Found FiveM with [{pid}]")
 
             # open the process handle
             PROCESS_ALL_ACCESS = (0x000F0000 | 0x00100000 | 0xFFF)
