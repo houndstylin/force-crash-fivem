@@ -5,6 +5,6 @@
 **I am not responsible for any issues, damages, or losses that may occur from the use or misuse of this tool. By using this tool, you agree to take full responsibility for any consequences that may arise from its use.**
 
 ## Introduction
-This forcefully crashes your FiveM. Saw it somewhere and decided to remake it.
+This forcefully crashes your FiveM by creating a remote thread that points to an invalid address. Saw it somewhere and decided to remake it.
 
 
