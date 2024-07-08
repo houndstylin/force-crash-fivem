@@ -21,7 +21,7 @@ def crash_fivem():
 
             thread_id = ctypes.c_ulong(0)
             if not ctypes.windll.kernel32.CreateRemoteThread(process_handle, None, 0, pThreadFunc, None, 0, ctypes.byref(thread_id)):
-                print(f"[-] Failed to create remote thread: {ctypes.windll.kernel32.GetLastError()}")
+                print(f"[-] Failed: {ctypes.windll.kernel32.GetLastError()}")
                 ctypes.windll.kernel32.CloseHandle(process_handle)
                 return False
             
