@@ -12,7 +12,7 @@ def crash_fivem():
             process_handle = ctypes.windll.kernel32.OpenProcess(PROCESS_ALL_ACCESS, False, pid)
             
             if not process_handle:
-                print(f"Failed to open process: {ctypes.windll.kernel32.GetLastError()}")
+                print(f"could not open process: {ctypes.windll.kernel32.GetLastError()}")
                 return False
             
             # create a remote thread that points to an invalid addres
