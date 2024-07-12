@@ -31,7 +31,7 @@ def crash_fivem():
             ctypes.windll.kernel32.CloseHandle(process_handle)
             return True
     
-    print("FiveM.exe process not found.")
+    print("[-] Couldnt find FiveM.")
     return False
 
 if __name__ == "__main__":
