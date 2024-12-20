@@ -6,17 +6,13 @@ def crash_fivem():
         if proc.info['name'] == 'FiveM.exe':
             pid = proc.info['pid']
             print(f"[+] Found FiveM process [{pid}]")
-
-            # open the process handle
-            PROCESS_ALL_ACCESS = (0x000F0000 | 0x00100000 | 0xFFF)
+            PROCESS_ALL_ACCESS = (0x000F0000 | 0x00100000 | 0xFFF) # open the process handle
             process_handle = ctypes.windll.kernel32.OpenProcess(PROCESS_ALL_ACCESS, False, pid)
             
             if not process_handle:
                 print(f"could not open process: {ctypes.windll.kernel32.GetLastError()}")
                 return False
-            
-            # create a remote thread that points to an invalid addres
-            THREADFUNC = ctypes.WINFUNCTYPE(ctypes.c_ulong)
+            THREADFUNC = ctypes.WINFUNCTYPE(ctypes.c_ulong) # create a remote thread that points to an invalid addres
             pThreadFunc = THREADFUNC(0xDEADBEEF)
 
             thread_id = ctypes.c_ulong(0)
@@ -26,9 +22,7 @@ def crash_fivem():
                 return False
             
             print("[+] Crashed Fivem")
-            
-            # close the process handle
-            ctypes.windll.kernel32.CloseHandle(process_handle)
+            ctypes.windll.kernel32.CloseHandle(process_handle) # close the process handle
             return True
     
     print("[-] Couldnt find FiveM.")
